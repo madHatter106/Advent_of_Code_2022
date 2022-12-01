@@ -1,0 +1,11 @@
+with open('input.txt', 'r') as fi:
+    calories = [line.strip() for line in fi.readlines()]
+    elf_cal = 0
+    elves_cal = []
+    for cal in calories:
+        if cal == "":
+            elves_cal.append(elf_cal)
+            elf_cal = 0
+            continue
+        elf_cal += int(cal)
+    print(sum(sorted(elves_cal)[-3:]))
